@@ -1,4 +1,4 @@
-default partial alphanumeric_keys modifier_keys
+partial alphanumeric_keys modifier_keys
 xkb_symbols "basic" {
 
     name[Group1]= "English (US)";
@@ -18,7 +18,7 @@ xkb_symbols "basic" {
     key <AE12> {	[     equal,	plus		]	};
 
     key <AD01> {	[	  q,	Q 		]	};
-    key <AD02> {	[	  w,	W		]	};
+    key <AD02> {	[	  w,    W       ]	};
     key <AD03> {	[	  e,	E		]	};
     key <AD04> {	[	  r,	R		]	};
     key <AD05> {	[	  t,	T		]	};
@@ -54,6 +54,24 @@ xkb_symbols "basic" {
     key <AB10> {	[     slash,	question	]	};
 
     key <BKSL> {	[ backslash,         bar	]	};
+};
+
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "berdan" {
+
+    include "us(basic)"
+    name[Group1]= "English (Berdan)";
+
+    // Switch ESC with Caps Lock
+    key <CAPS>  {	[  Escape		]	};
+    key <ESC>   {	[ Caps_Lock		]	};
+
+    // Implement LSGT+WASD as arrow buttons
+    include "level5(lsgt_switch)"
+    replace key <AD02> {	[	  w, W, Up,     Up,     Up      ]	};
+    replace key <AC01> {	[	  a, A, Left,   Left,   Left    ]	};
+    replace key <AC02> {	[	  s, S, Down,   Down,   Down    ]	};
+    replace key <AC03> {	[	  d, D, Right,  Right,  Right   ]	};
 };
 
 partial alphanumeric_keys
@@ -2167,7 +2185,7 @@ xkb_symbols "3l-cros" {
     };
 };
 
-// A 3l variant for emacs users, which maps control to caps lock and (re)maps 
+// A 3l variant for emacs users, which maps control to caps lock and (re)maps
 // tab back to tab.
 partial modifier_keys
 xkb_symbols "3l-emacs" {
