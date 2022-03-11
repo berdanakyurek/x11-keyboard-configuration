@@ -66,12 +66,20 @@ xkb_symbols "berdan" {
     key <CAPS>  {	[  Escape		]	};
     key <ESC>   {	[ Caps_Lock		]	};
 
-    // Implement LSGT+WASD as arrow buttons
+    // Implement level 5 mapping
+    include "level5(modifier_mapping)"
     include "level5(lsgt_switch)"
-    replace key <AD02> {	[	  w, W, Up,     Up,     Up      ]	};
-    replace key <AC01> {	[	  a, A, Left,   Left,   Left    ]	};
-    replace key <AC02> {	[	  s, S, Down,   Down,   Down    ]	};
-    replace key <AC03> {	[	  d, D, Right,  Right,  Right   ]	};
+    key.type[Group1] = "EIGHT_LEVEL";
+
+    // Implement LSGT + some letters as turkish character versions
+
+    key <AB03> {	[	  c,	C, NoSymbol, NoSymbol, ccedilla, Ccedilla 	]	};
+    key <AC05> {	[	  g,	G, NoSymbol, NoSymbol, gbreve, Gbreve	    ]	};
+    key <AD08> {	[	  i,	I, NoSymbol, NoSymbol, idotless, Iabovedot      ]	};
+    key <AD09> {	[	  o,	O, NoSymbol, NoSymbol, odiaeresis, Odiaeresis 	]	};
+    key <AC02> {	[	  s,	S, NoSymbol, NoSymbol, scedilla, Scedilla	    ]	};
+    key <AD07> {	[	  u,	U, NoSymbol, NoSymbol, udiaeresis, Udiaeresis   ]	};
+
 };
 
 partial alphanumeric_keys
