@@ -1,0 +1,1 @@
+Simply download and run update_xkb.sh. It will download the necessary files in the required place.
