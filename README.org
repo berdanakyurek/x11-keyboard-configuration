@@ -1,1 +1,1 @@
-Download and run update_xkb.sh as sudo. It will download the necessary files in the required place.
+Place custom_layout file in ~/.xkb/symbols directory. After logging out and back in, the new keyboard layout will take effect.

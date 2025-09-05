@@ -1,0 +1,22 @@
+xkb_symbols "basic" {
+    include "us(basic)"
+
+    // Caps Lock yerine Escape
+    key <CAPS> { [ Escape ] };
+
+    // Escape yerine Caps Lock
+    key <ESC>  { [ Caps_Lock ] };
+
+    // LSGT to Turkish char shift
+    key <LSGT> { [ ISO_Level3_Shift, ISO_Level3_Shift ] };
+    modifier_map Mod5 { <LSGT> };
+    key.type[Group1] = "FOUR_LEVEL_ALPHABETIC";
+
+    key <AC02> { [ s, S, scedilla,  Scedilla  ] }; // s → ş/Ş
+    key <AB03> { [ c, C, ccedilla,  Ccedilla  ] }; // c → ç/Ç
+    key <AC05> { [ g, G, gbreve,    Gbreve    ] }; // g → ğ/Ğ
+    key <AD07> { [ u, U, udiaeresis,Udiaeresis] }; // u → ü/Ü
+    key <AD08> { [ i, I, idotless,  Iabovedot ] }; // i → ı/İ
+    key <AD09> { [ o, O, odiaeresis,Odiaeresis] }; // o → ö/Ö
+
+};
